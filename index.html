@@ -1,0 +1,60 @@
+<!doctype html>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<div class="container">
+    <br>
+    <div class="bg-light">
+        <div class="display-4">Send Message</div>
+        <br>
+
+        <input id="name" class="form-control" placeholder="Name">
+        <br>
+        
+        <textarea id="msg" class="form-control" placeholder="Message"></textarea>
+        <br>
+
+        <button id="send" class="btn btn-primary">Send</button>
+    </div>
+    <div id="messages"></div>
+</div>
+
+<script>
+    var socket = io()
+    $(()=>{
+        //console.log('document ready')
+        $('#send').click(()=>{
+            // addMessages({name: 'Tim', message: 'hello'})
+            var msg = {name: $('#name').val(), message: $('#msg').val()};
+            console.log('posting a msg: ', msg);
+            postMessage(msg)
+        })
+
+        
+        getMessages()
+        
+    })
+    
+    socket.on('message', addMessage)
+    
+    function addMessage(msg){
+        $('#messages').append(`<h4>${msg.name}</h4><p>${msg.message}`)
+    }
+
+    function getMessages(){
+        $.get('http://localhost:3000/messages', (data)=>{
+            //console.log(data)
+            data.forEach(addMessage);
+        })
+    }
+    
+    function postMessage(msg){
+        //console.log(msg);
+        $.post('http://localhost:3000/messages', msg)
+    }
+
+    
+</script>
