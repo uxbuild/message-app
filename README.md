@@ -11,3 +11,4 @@ Exercise from Linkedin course: "Learning Node.js"
 > MongoDB / mongodb.com  
 > File: "configdb.js" module to store db url.  
 > Local install of Postman to test http post requests
+> nodemon for monitoring web server updates
