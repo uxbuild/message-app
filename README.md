@@ -1,5 +1,5 @@
 # message-app
-From: Linkedin.com / course: "Learning Node.js", by Alexander Zanfir
+Following tutorial from Linkedin course: "Learning Node.js"
 * create n install node modules
 * web server with node
 * routing with express (get + post endpoints)
