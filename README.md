@@ -5,9 +5,9 @@ Exercise from Linkedin course: "Learning Node.js"
 * routing with express (get + post endpoints)
 * web sockets w socket.io for server-driven page refreshes
 * connecting to NoSQL database with MongoDB + Mongoose
-* javascript asynchronous programming with promises + async/await
+* asynchronous programming with JS promises + async/await
 
-Other requirements:
-MongoDB / mongodb.com
-File: "configdb.js" module to store db url.
-Local install of Postman to test http post requests
+** Other requirements: **
+> MongoDB / mongodb.com
+> File: "configdb.js" module to store db url.
+> Local install of Postman to test http post requests
