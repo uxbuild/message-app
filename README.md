@@ -7,7 +7,7 @@ Exercise from Linkedin course: "Learning Node.js"
 * connecting to NoSQL database with MongoDB + Mongoose
 * asynchronous programming with JS promises + async/await
 
-** Other requirements: **
-> MongoDB / mongodb.com
-> File: "configdb.js" module to store db url.
+## Other requirements:
+> MongoDB / mongodb.com  
+> File: "configdb.js" module to store db url.  
 > Local install of Postman to test http post requests
